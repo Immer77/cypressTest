@@ -1,3 +1,66 @@
+/* Add padding to container elements */
+.grid {
+	display: grid;
+	gap: 5px;
+	grid-template-columns: 1fr 2fr;
+}
+
+@media only screen and (max-width: 500px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.container {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "Dice Dice Dice Dice Dice"
+  "Turn-Indicator Roll-Button"
+  "Buttons";
+  padding: 16px;
+}
+
+.item-a {
+  grid-area: Dice;
+  flex: 50%;
+  padding: 0 4px;
+  margin-top: 8px;
+  width: 10%;
+  vertical-align: middle;
+  table-layout: fixed;
+  background-repeat: no-repeat;
+}
+
+.item-b {
+  grid-area: Turn-Indicator;
+  margin: auto;
+  table-layout: fixed;
+  background-repeat: no-repeat;
+}
+#turnRolled {
+
+}
+
+.item-c {
+  grid-area: Roll-Button;
+}
+
+.item-d {
+  grid-area: Buttons;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 15;
+  background-color: #04AA6D; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 25%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+}
+
 body {
     background-color:#ffffff;
     background-repeat:no-repeat;
@@ -94,6 +157,17 @@ button:hover {
   opacity:1;
 }
 
+button, #roll {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+}
+
 /* Extra styles for the cancel button */
 .cancelbtn {
   padding: 14px 20px;
@@ -106,10 +180,7 @@ button:hover {
   width: 50%;
 }
 
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
+
 
 /* Clear floats */
 .clearfix::after {

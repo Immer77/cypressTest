@@ -10,31 +10,39 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="/assets/style.css">
     </head>
     <body>
-       <form>
-        <button>1-s</button>
-        <button>2-s</button>
-        <button>3-s</button>
-        <button>4-s</button>
-        <button>5-s</button>
-        <button>6-s</button>
-        <button>One-pair</button>
-        <button>Two-pair</button>
-        <button>Three-same</button>
-        <button>Four-same</button>
-        <button>Full-House</button>
-        <button>Small-Straight</button>
-        <button>Large-Straight</button>        
-        <button>Chance</button>
-        <button>Yatzy</button>
 
+        <div class="container">
+            <img class="item-a" src="/assets/Dice1.png" alt="">
+            <img class="item-a" src="/assets/Dice2.png" alt="">
+            <img class="item-a" src="/assets/Dice3.png" alt="">
+            <img class="item-a" src="/assets/Dice4.png" alt="">
+            <img class="item-a" src="/assets/Dice5.png" alt="">
+            <img class="item-a" src="/assets/Dice6.png" alt="">
 
-
-
-       </form>
-        
-        <script src="yatzy.js" async defer></script>
+            <div class="item-b">
+                <h2 id="turnRolled">Turn Rolled 0</h2>
+                <button onclick="rollUp()" id="roll">Roll!</button>
+            </div>
+            
+            <button id="Button" onclick="buttonClicked('Button')"  class="item-d" >1-s</button>
+            <button id="Button2" onclick="buttonClicked('Button2')" class="item-d">2-s</button>
+            <button id="Button3" onclick="buttonClicked('Button3')" class="item-d">3-s</button>
+            <button id="Button4" onclick="buttonClicked('Button4')" class="item-d">4-s</button>
+            <button id="Button5" onclick="buttonClicked('Button5')" class="item-d">5-s</button>
+            <button id="Button6" onclick="buttonClicked('Button6')" class="item-d">6-s</button>
+            <button id="Button7" onclick="buttonClicked('Button7')" class="item-d">One-pair</button>
+            <button id="Button8" onclick="buttonClicked('Button8')" class="item-d">Two-pair</button>    
+            <button id="Button9" onclick="buttonClicked('Button9')" class="item-d">Three-same</button>
+            <button id="Button10" onclick="buttonClicked('Button10')" class="item-d">Four-same</button>
+            <button id="Button11" onclick="buttonClicked('Button11')" class="item-d">Full-House</button>
+            <button id="Button12" onclick="buttonClicked('Button12')" class="item-d">Small-Straight</button>
+            <button id="Button13" onclick="buttonClicked('Button13')" class="item-d">Large-Straight</button>        
+            <button id="Button14" onclick="buttonClicked('Button14')" class="item-d">Chance</button>
+            <button id="Button15" onclick="buttonClicked('Button15')" class="item-d">Yatzy</button>
+        </div>    
+        <script src="/assets/yatzy.js"></script>
     </body>
 </html>

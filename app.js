@@ -4,7 +4,10 @@ const port = 3000;
 const mongoose = require('mongoose');
 const atlasUsername = process.env.atlasLogin;
 const atlaspass = process.env.atlasPassword;
+const bcrypt = require('bcrypt');
 app.use(express.urlencoded({extended :   false}));
+
+
 
 //app.use(express.urlencoded({ extended: false }))
 
@@ -26,11 +29,12 @@ const User = mongoose.model('Users', {
 
 app.post('/register', async (req, res) => {
     console.log(req.body);
-    if(req.body.psw !== req.body.psw_repeat){
+    if(req.body.psw != req.body.psw_repeat){
         res.status(404);
         return;
     }
-    let newUser = new User({ "email": req.body.email, "password": req.body.psw })
+    const hashedPassword = await bcrypt.hash(req.body.psw, 10);
+    const newUser = new User({ "email": req.body.email, "password": hashedPassword })
     await newUser.save();
 })
 
